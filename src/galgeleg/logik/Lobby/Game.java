@@ -30,7 +30,7 @@ public class Game {
 
     public void waitForPlayers() {
         timer = new Timer();
-        //ToDo Find a way for the broadcast to be accepted.
+        //ToDo Find a way for the broadcast to be accepted. Annoncere at der er en der vil spille, og at man skal vælge om man vil spille med.
         /*
             sendToAll("Game starting in: ", "[System]");
          */
@@ -51,22 +51,22 @@ public class Game {
     }
 
     public void startGame() throws RemoteException {
-
+        //TODO: only supports one player.
         //waitForPlayers();
 
-        if(Players.size() < 2) {
+        if (Players.size() < 2) {
             this.server = new Galgelogik(null);
             PlayerGame.put(Players.get(0), server);
             Lobby.ConnectedUsers.get(Players.get(0)).startGame(server);
         } else {
             String word;
 
-            ArrayList <String> possibleWords = new DR_WordList().getWords();
+            ArrayList<String> possibleWords = new DR_WordList().getWords();
             word = possibleWords.get(new Random().nextInt(possibleWords.size()));
 
             this.server = new Galgelogik(word);
 
-            for(int i = 0; i < Players.size(); i++) {
+            for (int i = 0; i < Players.size(); i++) {
                 PlayerGame.put(Players.get(i), server);
                 Lobby.ConnectedUsers.get(Players.get(i)).startGame(server);
             }
