@@ -4,133 +4,146 @@
         xmlns:tns="http://soap.transport.brugerautorisation/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://soap.transport.brugerautorisation/"
         name="BrugeradminImplService">
-<types>
-<xsd:schema>
-<xsd:import namespace="http://soap.transport.brugerautorisation/" schemaLocation="http://javabog.dk:9901/brugeradmin?xsd=1"/>
-</xsd:schema>
-</types>
-<message name="hentBruger">
-<part name="parameters" element="tns:hentBruger"/>
-</message>
-<message name="hentBrugerResponse">
-<part name="parameters" element="tns:hentBrugerResponse"/>
-</message>
-<message name="ændrAdgangskode">
-<part name="parameters" element="tns:ændrAdgangskode"/>
-</message>
-<message name="ændrAdgangskodeResponse">
-<part name="parameters" element="tns:ændrAdgangskodeResponse"/>
-</message>
-<message name="sendEmail">
-<part name="parameters" element="tns:sendEmail"/>
-</message>
-<message name="sendEmailResponse">
-<part name="parameters" element="tns:sendEmailResponse"/>
-</message>
-<message name="sendGlemtAdgangskodeEmail">
-<part name="parameters" element="tns:sendGlemtAdgangskodeEmail"/>
-</message>
-<message name="sendGlemtAdgangskodeEmailResponse">
-<part name="parameters" element="tns:sendGlemtAdgangskodeEmailResponse"/>
-</message>
-<message name="getEkstraFelt">
-<part name="parameters" element="tns:getEkstraFelt"/>
-</message>
-<message name="getEkstraFeltResponse">
-<part name="parameters" element="tns:getEkstraFeltResponse"/>
-</message>
-<message name="setEkstraFelt">
-<part name="parameters" element="tns:setEkstraFelt"/>
-</message>
-<message name="setEkstraFeltResponse">
-<part name="parameters" element="tns:setEkstraFeltResponse"/>
-</message>
-<portType name="Brugeradmin">
-<operation name="hentBruger">
-<input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/hentBrugerRequest" message="tns:hentBruger"/>
-<output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/hentBrugerResponse" message="tns:hentBrugerResponse"/>
-</operation>
-<operation name="ændrAdgangskode">
-<input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/ændrAdgangskodeRequest" message="tns:ændrAdgangskode"/>
-<output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/ændrAdgangskodeResponse" message="tns:ændrAdgangskodeResponse"/>
-</operation>
-<operation name="sendEmail">
-<input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/sendEmailRequest" message="tns:sendEmail"/>
-<output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/sendEmailResponse" message="tns:sendEmailResponse"/>
-</operation>
-<operation name="sendGlemtAdgangskodeEmail">
-<input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/sendGlemtAdgangskodeEmailRequest" message="tns:sendGlemtAdgangskodeEmail"/>
-<output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/sendGlemtAdgangskodeEmailResponse" message="tns:sendGlemtAdgangskodeEmailResponse"/>
-</operation>
-<operation name="getEkstraFelt">
-<input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/getEkstraFeltRequest" message="tns:getEkstraFelt"/>
-<output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/getEkstraFeltResponse" message="tns:getEkstraFeltResponse"/>
-</operation>
-<operation name="setEkstraFelt">
-<input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/setEkstraFeltRequest" message="tns:setEkstraFelt"/>
-<output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/setEkstraFeltResponse" message="tns:setEkstraFeltResponse"/>
-</operation>
-</portType>
-<binding name="BrugeradminImplPortBinding" type="tns:Brugeradmin">
-<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="hentBruger">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="ændrAdgangskode">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="sendEmail">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="sendGlemtAdgangskodeEmail">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getEkstraFelt">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="setEkstraFelt">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-</binding>
-<service name="BrugeradminImplService">
-<port name="BrugeradminImplPort" binding="tns:BrugeradminImplPortBinding">
-<soap:address location="http://javabog.dk:9901/brugeradmin"/>
-</port>
-</service>
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://soap.transport.brugerautorisation/"
+                        schemaLocation="http://javabog.dk:9901/brugeradmin?xsd=1"/>
+        </xsd:schema>
+    </types>
+    <message name="hentBruger">
+        <part name="parameters" element="tns:hentBruger"/>
+    </message>
+    <message name="hentBrugerResponse">
+        <part name="parameters" element="tns:hentBrugerResponse"/>
+    </message>
+    <message name="ændrAdgangskode">
+        <part name="parameters" element="tns:ændrAdgangskode"/>
+    </message>
+    <message name="ændrAdgangskodeResponse">
+        <part name="parameters" element="tns:ændrAdgangskodeResponse"/>
+    </message>
+    <message name="sendEmail">
+        <part name="parameters" element="tns:sendEmail"/>
+    </message>
+    <message name="sendEmailResponse">
+        <part name="parameters" element="tns:sendEmailResponse"/>
+    </message>
+    <message name="sendGlemtAdgangskodeEmail">
+        <part name="parameters" element="tns:sendGlemtAdgangskodeEmail"/>
+    </message>
+    <message name="sendGlemtAdgangskodeEmailResponse">
+        <part name="parameters" element="tns:sendGlemtAdgangskodeEmailResponse"/>
+    </message>
+    <message name="getEkstraFelt">
+        <part name="parameters" element="tns:getEkstraFelt"/>
+    </message>
+    <message name="getEkstraFeltResponse">
+        <part name="parameters" element="tns:getEkstraFeltResponse"/>
+    </message>
+    <message name="setEkstraFelt">
+        <part name="parameters" element="tns:setEkstraFelt"/>
+    </message>
+    <message name="setEkstraFeltResponse">
+        <part name="parameters" element="tns:setEkstraFeltResponse"/>
+    </message>
+    <portType name="Brugeradmin">
+        <operation name="hentBruger">
+            <input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/hentBrugerRequest"
+                   message="tns:hentBruger"/>
+            <output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/hentBrugerResponse"
+                    message="tns:hentBrugerResponse"/>
+        </operation>
+        <operation name="ændrAdgangskode">
+            <input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/ændrAdgangskodeRequest"
+                   message="tns:ændrAdgangskode"/>
+            <output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/ændrAdgangskodeResponse"
+                    message="tns:ændrAdgangskodeResponse"/>
+        </operation>
+        <operation name="sendEmail">
+            <input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/sendEmailRequest"
+                   message="tns:sendEmail"/>
+            <output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/sendEmailResponse"
+                    message="tns:sendEmailResponse"/>
+        </operation>
+        <operation name="sendGlemtAdgangskodeEmail">
+            <input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/sendGlemtAdgangskodeEmailRequest"
+                   message="tns:sendGlemtAdgangskodeEmail"/>
+            <output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/sendGlemtAdgangskodeEmailResponse"
+                    message="tns:sendGlemtAdgangskodeEmailResponse"/>
+        </operation>
+        <operation name="getEkstraFelt">
+            <input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/getEkstraFeltRequest"
+                   message="tns:getEkstraFelt"/>
+            <output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/getEkstraFeltResponse"
+                    message="tns:getEkstraFeltResponse"/>
+        </operation>
+        <operation name="setEkstraFelt">
+            <input wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/setEkstraFeltRequest"
+                   message="tns:setEkstraFelt"/>
+            <output wsam:Action="http://soap.transport.brugerautorisation/Brugeradmin/setEkstraFeltResponse"
+                    message="tns:setEkstraFeltResponse"/>
+        </operation>
+    </portType>
+    <binding name="BrugeradminImplPortBinding" type="tns:Brugeradmin">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <operation name="hentBruger">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="ændrAdgangskode">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="sendEmail">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="sendGlemtAdgangskodeEmail">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="getEkstraFelt">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+        <operation name="setEkstraFelt">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="BrugeradminImplService">
+        <port name="BrugeradminImplPort" binding="tns:BrugeradminImplPortBinding">
+            <soap:address location="http://javabog.dk:9901/brugeradmin"/>
+        </port>
+    </service>
 </definitions>
