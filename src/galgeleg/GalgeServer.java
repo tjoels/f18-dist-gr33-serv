@@ -14,6 +14,7 @@ public class GalgeServer {
         LocateRegistry.createRegistry(1076);
 
         try {
+            //Naming.rebind("rmi://ubuntu4.saluton.dk:1076/galgeleg", lobby);
             Naming.rebind("rmi://localhost:1076/galgeleg", lobby);
 
             System.err.println("Waiting for connection from clients.");

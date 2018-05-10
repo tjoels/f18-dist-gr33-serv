@@ -31,7 +31,8 @@ public class Galgelogik extends UnicastRemoteObject implements GalgeInterface, G
     return word;
   }
 
-  public String getVisibleWord() {
+  public String visibleWord() {
+    updateVisibleWord();
     return visibleWord;
   }
 
