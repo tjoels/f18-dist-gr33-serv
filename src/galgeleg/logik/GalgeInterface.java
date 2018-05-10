@@ -6,6 +6,8 @@ public interface GalgeInterface extends java.rmi.Remote {
 
     void guessLetter(String bogstav)                    throws java.rmi.RemoteException;
 
+    String visibleWord()                               throws java.rmi.RemoteException;
+
     int getWrongLetterCount()                           throws java.rmi.RemoteException;
 
     int getScore()                                      throws java.rmi.RemoteException;

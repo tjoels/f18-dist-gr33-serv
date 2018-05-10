@@ -81,11 +81,7 @@ public class Lobby extends UnicastRemoteObject implements LobbyInterface {
 
     public synchronized void registrer(String username, ClientInterface client) {
         ConnectedUsers.put(username, client);
-
-        //ChatList.add(client);
-        //client_count++;
     }
-
 
     public synchronized void sendToAll(String message, String from) throws RemoteException {
         System.out.println("[" + from + "]: " + message);
@@ -104,8 +100,8 @@ public class Lobby extends UnicastRemoteObject implements LobbyInterface {
         try {
             Games.put(0, new Game());
             Games.get(0).addPlayerToGame(username);
-            Games.get(0).startGame();
-        } catch (MalformedURLException | RemoteException e) {
+            Games.get(0).startGame(); //Change to waitForPlayer() for testing multiplayer.
+        } catch (RemoteException e) {
             e.printStackTrace();
         }
     }
