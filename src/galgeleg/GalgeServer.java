@@ -18,6 +18,7 @@ public class GalgeServer {
         try {
             //Naming.rebind("rmi://ubuntu4.saluton.dk:1076/galgeleg", lobby);
             Naming.rebind("rmi://130.225.170.244:1076/galgeleg", lobby);
+//            Naming.rebind("rmi://localhost:1076/galgeleg", lobby);
 
             System.err.println("Waiting for connection from clients.");
         } catch (Exception e) {

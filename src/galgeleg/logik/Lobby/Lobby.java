@@ -39,7 +39,7 @@ public class Lobby extends UnicastRemoteObject implements LobbyInterface {
     public Boolean login(String username, String password) {
 
         HttpURLConnection connection = null;
-
+        System.out.println("LOGIN STARTED FROM Lobby");
         try {
             URL url = new URL("http://javabog.dk:9901/brugeradmin?wsdl");
             QName qname = new QName("http://soap.transport.brugerautorisation/", "BrugeradminImplService");
@@ -47,11 +47,13 @@ public class Lobby extends UnicastRemoteObject implements LobbyInterface {
             Brugeradmin brugeradmin = service.getPort(Brugeradmin.class);
 
             connection = (HttpURLConnection) url.openConnection();
-
+            System.out.println("CONNECTION TO BRUGERAUTORISATIONSMODUL");
             try {
                 if (brugeradmin != null) {
                     try {
+                        System.out.println("LOGGING IN");
                         bruger = brugeradmin.hentBruger(username, password);
+                        System.out.println("LOGGED IN SUCCESSFULLY");
                     } catch (ServerSOAPFaultException e) {
                         System.out.println("A client entered wrong username or password." +
                                 "\nUsername entered: " + username +
@@ -60,6 +62,7 @@ public class Lobby extends UnicastRemoteObject implements LobbyInterface {
                     }
                 }
                 if (bruger  != null) {
+                    System.out.println("CREATING USER");
                     Users.putIfAbsent(bruger.getBrugernavn(), 0);
                     System.err.println("[" + bruger.getBrugernavn() + " : " + bruger.getFornavn() + "] client joined.");
                     return true;
