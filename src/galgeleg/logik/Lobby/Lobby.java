@@ -56,11 +56,11 @@ public class Lobby extends UnicastRemoteObject implements LobbyInterface {
                         System.out.println("A client entered wrong username or password." +
                                 "\nUsername entered: " + username +
                                 "\nPassword entered: " + password);
+                        return false;
                     }
                 }
                 if (bruger  != null) {
                     Users.putIfAbsent(bruger.getBrugernavn(), 0);
-                    //LobbyUserlist.add(bruger);
                     System.err.println("[" + bruger.getBrugernavn() + " : " + bruger.getFornavn() + "] client joined.");
                     return true;
                 }
