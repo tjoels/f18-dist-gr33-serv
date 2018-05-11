@@ -88,8 +88,9 @@ public class Lobby extends UnicastRemoteObject implements LobbyInterface {
 
         for(Map.Entry<String, Integer> entry : Users.entrySet()) {
             String key = entry.getKey();
+            String newMessage = "[" + from + "]: " + message;
             if(!key.equalsIgnoreCase(from))
-                ConnectedUsers.get(key).getMessage(message);
+                ConnectedUsers.get(key).getMessage(newMessage);
         }
     }
 
