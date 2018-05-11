@@ -108,6 +108,9 @@ public class Lobby extends UnicastRemoteObject implements LobbyInterface {
     }
 
     public void disconnectClient(String username) {
-        ConnectedUsers.remove(username);
+        if (ConnectedUsers.get(username) != null) {
+            ConnectedUsers.remove(username);
+            System.out.println("[" + username + "]: Disconnected from server");
+        }
     }
 }
